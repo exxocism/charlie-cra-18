@@ -14,5 +14,6 @@
     "types": ["react/next", "react-dom/next", "@types/node"]
     //only if you want type safety with the backend
     // "paths": { "@backend/*": ["../server/*"] }
-  }
+  },
+  "include": ["src", "src/custom.d.ts"]
 }

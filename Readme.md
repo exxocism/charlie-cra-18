@@ -10,6 +10,8 @@ Key features
 - `Typescript` applied
 - acts like create-react-app
 - installs `styled-components` by default
+- installs `recoilJS` by default
+- installs `react-router-dom` by default
 - (hopefully) lightweight
 
 <br>

@@ -1,18 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import { GlobalStyles } from './styles';
+import { RecoilRoot } from 'recoil';
+import { BrowserRouter } from 'react-router-dom';
+
+import App from './App';
 import './index.css';
 
 const container = document.getElementById('app');
 
-// Create a root.
-const root = ReactDOM.createRoot(container);
-
 // Initial render: Render an element to the root.
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles />
-    <App />
-  </React.StrictMode>
+    <RecoilRoot>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </RecoilRoot>
+  </React.StrictMode>,
+  container
 );

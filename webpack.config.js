@@ -8,29 +8,20 @@ module.exports = {
   output: {
     filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'build'),
-    assetModuleFilename: 'assets/[hash][ext][query]',
+    assetModuleFilename: 'assets/[hash].[query].[ext]',
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
         exclude: /node_modules/,
-        // exclude: /[\\/]node_modules[\\/]/,
         use: [
-          // {
-          //   loader: 'babel-loader',
-          //   options: {
-          //     //presets: ['react'],
-          //     //plugins: ['./syntax/jsx-babel-transpile', './syntax/jsx-syntax-parser'],
-          //   },
-          // },
           {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env', '@babel/preset-react'],
+              presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
             },
           },
-          'ts-loader',
         ],
       },
       {
@@ -38,7 +29,15 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|jpg|gif|svg|webp|ico)$/i,
+        test: /\.(png|jpg|gif|webp|ico)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.svg$/i,
+        use: ['@svgr/webpack'],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
       },
     ],
@@ -111,7 +110,7 @@ module.exports = {
   },
   performance: {
     hints: false,
-    maxEntrypointSize: 512000,
-    maxAssetSize: 512000,
+    maxEntrypointSize: 1024768,
+    maxAssetSize: 1024768,
   },
 };
