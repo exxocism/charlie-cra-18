@@ -6,7 +6,7 @@
     "module": "es6",
     //Note that es5 doesn't support class declations
     "target": "es6",
-    "jsx": "react-jsx",
+    "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,

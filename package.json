@@ -1,6 +1,6 @@
 {
   "name": "charlie-cra-18",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Custom React package without Create-react-app",
   "main": "src/index.tsx",
   "scripts": {
@@ -40,6 +40,7 @@
     "css-loader": "^6.7.0",
     "html-webpack-plugin": "^5.5.0",
     "nodemon": "^2.0.15",
+    "source-map-loader": "^3.0.1",
     "style-loader": "^3.3.1",
     "ts-node": "^10.6.0",
     "typescript": "^4.6.2",
