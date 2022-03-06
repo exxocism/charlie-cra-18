@@ -8,6 +8,7 @@ module.exports = {
   output: {
     filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'build'),
+    publicPath: '/',
     assetModuleFilename: 'assets/[hash].[query].[ext]',
   },
   module: {
